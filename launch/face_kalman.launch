@@ -1,0 +1,5 @@
+<launch>
+	<param name = "haar_location" value = "$(find face_tracking_kalman)/share/haarcascade_frontalface_alt.xml"/>
+	<node pkg = "face_tracking_kalman" name="face_publisher" type = "face_tracking_kalman_node"/>
+
+</launch>

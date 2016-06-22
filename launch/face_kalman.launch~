@@ -1,0 +1,11 @@
+<launch>
+	<param name = "haar_location" value = "$(find face_tracking_kalman)/share/haarcascade_frontalface_alt.xml"/>
+	<node pkg = "face_tracking_kalman" name="face_publisher" type = "face_tracking_kalman_node"/>
+	
+<group>
+	<param name= "usb_cam/pixel_format" value="yuyv"/>
+	<param name= "usb_cam/video_device" value="/dev/video0"/>
+	<param name= "camera_topic" value="/usb_cam/image_raw"/>
+	<node pkg="usb_cam" name="usb_cam" type="usb_cam_node"/>
+</group>
+</launch>
